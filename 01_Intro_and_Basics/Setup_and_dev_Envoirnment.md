@@ -53,3 +53,70 @@ print("Hello, world!")
 
 -   **Virtual environments:** Isolate project-specific Python environments to avoid conflicts between different projects and libraries. You can create virtual environments using tools like `venv` or `virtualenv`.
 -   **Official documentation:** Refer to the Python documentation ([https://docs.python.org/](https://docs.python.org/)) and VS Code Python extension documentation ([https://code.visualstudio.com/docs/python/python-tutorial](https://code.visualstudio.com/docs/python/python-tutorial)) for more details and latest updates.
+
+## **REPL**
+
+**REPL** stands for **Read-Eval-Print Loop**. It's an interactive environment where you can type Python code, have it executed immediately, and see the results. It's like having a conversation with Python, where you ask it questions and it responds with answers.
+
+**Purpose of REPL:**
+
+-   **Experimenting with code:** Try out code snippets, test ideas, and explore Python's features without creating separate files.
+-   **Learning Python:** Get immediate feedback on your code, making it an excellent tool for learning and practicing Python.
+-   **Debugging:** Inspect variables and step through code line by line to identify errors.
+-   **Quick calculations and tasks:** Perform simple calculations or tasks without writing a full-fledged script.
+
+### **How to Open Python REPL in VS Code:**
+
+1.  **Select Python Interpreter:**
+    
+    -   Press **Ctrl+Shift+P** (Windows/Linux) or **Cmd+Shift+P** (macOS).
+    -   Type **Python: Select Interpreter** and choose the appropriate interpreter.
+    
+2.  **Open REPL:**
+    
+    -   There are two main ways to open REPL:
+        
+        -   **Terminal Panel:**
+            
+            -   Open the **Terminal** panel (**Ctrl+`** or **View > Terminal**).
+            -   Type `python` and press Enter.
+            -   You'll see the `>>>` prompt, indicating you're in the REPL.
+            
+        -   **Python Interactive Window:**
+            
+            -   Press **Ctrl+Shift+P** (Windows/Linux) or **Cmd+Shift+P** (macOS).
+            -   Type **Python: Start REPL** and select the option.
+            -   This opens a separate interactive window with code completion and other features.
+            
+### **Doing Calculations in REPL:**
+-   Type expressions directly at the prompt and press Enter:
+	```python
+    >>> 2 + 2
+    4
+    >>> 3 * 5
+    15
+    >>> 10 / 2
+    5.0
+    
+    ```    
+-   Use variables to store values:
+    ```python
+    >>> x = 10
+    >>> y = 5
+    >>> x + y
+    15
+    
+    ```
+
+### **Additional Tips:**
+
+-   Use the **up** and **down** arrow keys to navigate through your command history.
+-   Use **Tab** for code completion.
+-   Use **Ctrl+C** (Windows/Linux) or **Cmd+C** (macOS) to interrupt a running process.
+-   Use **help(function_name)** or **function_name?** to get help on a function.
+
+**Remember:**
+
+-   REPL is a powerful tool for learning, experimenting, and troubleshooting Python code.
+-   Take advantage of its interactive nature to explore Python's features and test your ideas quickly.
+-   If you need to create more complex programs or scripts, you'll still need to use Python files.
