@@ -5,7 +5,7 @@
 	* [Windows](#windows)
 	* [macOS](#macos) 
 	* [Linux](#linux)
-* [3. Creating your first Python program](#3-creating-your-first-python-program) 
+* [3. Creating your first  Python program](#3-creating-your-first-python-program) 
 * [4. Useful VS Code extensions for Python](#4-useful-vs-code-extensions-for-python) 
 	* [Some tips](#remember)
 * [REPL](#repl) 
