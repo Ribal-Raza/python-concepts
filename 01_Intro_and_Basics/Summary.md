@@ -70,6 +70,7 @@ Operators are the tools we use in programming to perform various operations on d
 	-   **Division (/):**  Splits one value by another (e.g., 12 / 4 = 3)
 	-   **Modulo (%):**  Gives the remainder after division (e.g., 10 % 3 = 1)
 	-   **Exponentiation (`**`):** Raises one value to the power of another (e.g., 2 ** 3 = 8)
+	-   **Floor Division (//):** Divides and give result by rounding off the decimal value 
 
 2. **Comparison Operators:** These compare two values and return True or False.
 	-   **Equality (==):**  Checks if two values are equal (e.g., 5 == 5 is True)

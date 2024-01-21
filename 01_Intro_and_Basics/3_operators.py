@@ -9,7 +9,7 @@ print(num1 / num2)  # Divide
 print(num1 * num2)  # Multiply
 print(num1 % num2)  # Modulus
 print(num1**num2)  # Exponent
-
+print(num1 // num2) # Floor Division
 # Comparison Operators (returns boolean value, true or false)
 print(num1 == num2)  # Equality
 print(num1 != num2)  # In-equality
