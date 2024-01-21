@@ -1,3 +1,8 @@
+# Python
+### Table of Contents:
+- [Setup Python Development Envoirnment](./01_Intro_and_Basics/Setup_and_dev_Envoirnment.md)
+- [Introduction to Python](#introduction-to-python)
+- [Basics (First Program, Variables, )](./01_Intro_and_Basics/Summary.md)
 ## **Introduction to Python**
 
 Python is a **high-level, general-purpose programming language**. This means it's designed to be easy for humans to read and write, and it can be used for a wide variety of tasks, unlike specialized languages like C++ for complex system programming.
@@ -32,3 +37,4 @@ Learning Python offers numerous benefits, both personal and professional:
 -   **Automation:** Python can automate repetitive tasks, saving you time and effort. This can be applied to personal or professional tasks, boosting your productivity.
 -   **Data analysis:** Python is a powerful tool for data analysis, allowing you to extract insights from data and make informed decisions.
 -   **Creative potential:** Python can be used for creative endeavors like game development, web development, web scraping, and even writing music.
+
