@@ -57,49 +57,136 @@ print("Hello, World!")
 	- Avoid reserved keywords (e.g.,  `if`,  `else`,  `while`)
 
 
-## Operators 
-Operators are the tools we use in programming to perform various operations on data. They act like mathematical symbols (+, -, *, /), but can also be used for comparisons, logical operations, and manipulating data structures.
+## Operators:
 
-### Types of Operators in Python:
+In Python, operators are special symbols or keywords that perform operations on variables and values. They are the building blocks of expressions, allowing you to manipulate and compare data.
 
-1. **Arithmetic Operators:** These perform basic mathematical operations on numbers.
+### Types of Operators:
 
-	-   **Addition (+):**  Combines two values (e.g., 5 + 3 = 8)
-	-   **Subtraction (-):**  Takes away one value from another (e.g., 10 - 7 = 3)
-	-   **Multiplication (*):**  Repeats one value by another (e.g., 4 * 2 = 8)
-	-   **Division (/):**  Splits one value by another (e.g., 12 / 4 = 3)
-	-   **Modulo (%):**  Gives the remainder after division (e.g., 10 % 3 = 1)
-	-   **Exponentiation (`**`):** Raises one value to the power of another (e.g., 2 ** 3 = 8)
-	-   **Floor Division (//):** Divides and give result by rounding off the decimal value 
+1.  **Arithmetic Operators:**
+    
+    -   Addition (`+`): Adds two operands.
+    -   Subtraction (`-`): Subtracts the right operand from the left operand.
+    -   Multiplication (`*`): Multiplies two operands.
+    -   Division (`/`): Divides the left operand by the right operand.
+    -   Floor Division (`//`): Returns the quotient of the division, discarding the remainder.
+    -   Modulus (`%`): Returns the remainder of the division.
+    -   Exponentiation (`**`): Raises the left operand to the power of the right operand.
+    
+    Example:
+    ```python
+    a = 10
+    b = 3
+    print(a + b)  # 13
+    print(a - b)  # 7
+    print(a * b)  # 30
+    print(a / b)  # 3.333...
+    print(a // b) # 3
+    print(a % b)  # 1
+    print(a ** b) # 1000
+    ```
+    
+2.  **Comparison Operators:**
+    
+    -   Equal to (`==`): True if the operands are equal.
+    -   Not equal to (`!=`): True if the operands are not equal.
+    -   Greater than (`>`): True if the left operand is greater than the right operand.
+    -   Less than (`<`): True if the left operand is less than the right operand.
+    -   Greater than or equal to (`>=`): True if the left operand is greater than or equal to the right operand.
+    -   Less than or equal to (`<=`): True if the left operand is less than or equal to the right operand.
+    
+    Example:
+    ```python
+    x = 5
+    y = 10
+    print(x == y)  # False
+    print(x != y)  # True
+    print(x > y)   # False
+    print(x < y)   # True
+    print(x >= y)  # False
+    print(x <= y)  # True
+    ```
+    
+3.  **Logical Operators:**
+    
+    -   Logical AND (`and`): True if both operands are true.
+    -   Logical OR (`or`): True if at least one operand is true.
+    -   Logical NOT (`not`): True if the operand is false, and vice versa.
+    
+    Example:
+    ```python
+    p = True
+    q = False
+    print(p and q)  # False
+    print(p or q)   # True
+    print(not p)    # False
+    ```
+    
+4.  **Assignment Operators:**
+    
+    -   Assignment (`=`): Assigns the value of the right operand to the left operand.
+    -   Add and Assign (`+=`): Adds the right operand to the left operand and assigns the result to the left operand.
+    -   Subtract and Assign (`-=`): Subtracts the right operand from the left operand and assigns the result to the left operand.
+    -   Multiply and Assign (`*=`): Multiplies the left operand by the right operand and assigns the result to the left operand.
+    -   Divide and Assign (`/=`): Divides the left operand by the right operand and assigns the result to the left operand.
+    
+    Example:
+    ```python
+    a = 5
+    b = 2
+    a += b  # equivalent to a = a + b
+    print(a)  # 7
+    ```
+    
+5.  **Bitwise Operators:**
+    
+    -   Bitwise AND (`&`): Performs bitwise AND operation.
+    -   Bitwise OR (`|`): Performs bitwise OR operation.
+    -   Bitwise XOR (`^`): Performs bitwise XOR (exclusive OR) operation.
+    -   Bitwise NOT (`~`): Inverts the bits of the operand.
+    -   Left Shift (`<<`): Shifts the bits of the left operand to the left by the number of positions specified by the right operand.
+    -   Right Shift (`>>`): Shifts the bits of the left operand to the right by the number of positions specified by the right operand.
+    
+    Example:
+    ```python
+    x = 5
+    y = 3
+    print(x & y)   # 1 (binary 101 & 011)
+    print(x | y)   # 7 (binary 101 | 011)
+    print(x ^ y)   # 6 (binary 101 ^ 011)
+    print(~x)      # -6 (inverts the bits)
+    print(x << 1)  # 10 (binary 101 shifted left by 1 position)
+    print(x >> 1)  # 2  (binary 101 shifted right by 1 position)
+    ```
+    
+6.  **Membership Operators:**
+    
+    -   `in`: True if a value is found in the sequence.
+    -   `not in`: True if a value is not found in the sequence.
+    
+    Example:
+    ```python
+    myList = [1, 2, 3, 4, 5]
+    print(3 in myList)    # True
+    print(6 not in myList) # True
+    ```
+    
+7.  **Identity Operators:**
+    
+    -   `is`: True if both operands are the same object.
+    -   `is not`: True if operands are not the same object.
+    
+    Example:
+    ```python
+    a = [1, 2, 3]
+    b = a
+    c = [1, 2, 3]
+    print(a is b)   # True
+    print(a is not c) # True
+    ```
+    
 
-2. **Comparison Operators:** These compare two values and return True or False.
-	-   **Equality (==):**  Checks if two values are equal (e.g., 5 == 5 is True)
-	-   **Inequality (!=):**  Checks if two values are not equal (e.g., 7 != 3 is True)
-	-   **Greater than (>):**  Checks if one value is greater than another (e.g., 9 > 6 is True)
-	-   **Less than (<):**  Checks if one value is less than another (e.g., 2 < 5 is True)
-	-   **Greater than or equal to (>=):**  Checks if one value is greater than or equal to another (e.g., 4 >= 4 is True)
-	-   **Less than or equal to (<=):**  Checks if one value is less than or equal to another (e.g., 8 <= 10 is True)
-
-3. **Logical Operators:** These combine Boolean values (True or False) using logical rules.
-	-   **And (&):**  True only if both conditions are True (e.g., (5 > 3) & (2 < 4) is True)
-	-   **Or (|):**  True if either condition is True (e.g., (2 < 3) | (8 > 5) is True)
-	-   **Not (!):**  Reverses the truth value of a condition (e.g., !(5 == 5) is False)
-
-4. **Assignment Operators:** These assign values to variables.
-
-	-   **(=)**: Simple assignment (e.g., age = 25)
-	-   **+=**: Adds and assigns (e.g., score += 10)
-	-   **-=**: Subtracts and assigns (e.g., money -= 5)
-	-   ***=**: Multiplies and assigns (e.g., population *= 2)
-	-   **/=**: Divides and assigns (e.g., distance /= 3)
-
-5. **Membership Operators:** These check if a value exists within a sequence (list, tuple, string).
-	-   **in:**  Checks if a value is present in a sequence (e.g., "book" in ["apple", "book", "pen"] is True)
-	-   **not in:**  Checks if a value is not present in a sequence (e.g., "dog" not in ["cat", "fish", "bird"] is True)
-
-6. **Identity Operators:** These compare object identities, not their values.
-	 - Is (`is`): Checks if two objects are the same object (e.g.,  `a is a = True`)
-	 - Is not (`is not`): Checks if two objects are not the same object (e.g.,  `a is not b = True`)
+These are the primary types of operators in Python along with examples for each category. Understanding and mastering these operators is crucial for effective Python programming.
 
 ### **Precedence: The Order of Operations:**
 
