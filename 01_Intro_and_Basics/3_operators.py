@@ -1,40 +1,58 @@
-# Arithmatic operators
-# We will take 2 variables and will apply different Math operators on them
-num1 = 10
+"""
+Demonstration of Arithmetic, Comparison, Assignment, and Identity Operators
+
+This code explores various operators in Python:
+- Arithmetic operators for performing numerical calculations
+- Comparison operators for comparing values
+- Assignment operators for assigning and updating variables
+- Identity operators for checking object identity
+"""
+
+#num1 = 10
 num2 = 3
 
-print(num1 + num2)  # Add
-print(num1 - num2)  # Subtract
-print(num1 / num2)  # Divide
-print(num1 * num2)  # Multiply
-print(num1 % num2)  # Modulus
-print(num1**num2)  # Exponent
-print(num1 // num2) # Floor Division
+# Demonstrate addition, subtraction, division, multiplication, modulus, exponent, 
+# and floor division
+print("Addition:", num1 + num2)
+print("Subtraction:", num1 - num2)
+print("Division:", num1 / num2)
+print("Multiplication:", num1 * num2)
+print("Modulus (remainder):", num1 % num2)
+print("Exponent:", num1 ** num2)
+print("Floor division (integer division):", num1 // num2)
+print("")
 # Comparison Operators (returns boolean value, true or false)
-print(num1 == num2)  # Equality
-print(num1 != num2)  # In-equality
-print(num1 > num2)  # Greater than
-print(num1 < num2)  # Less than
-print(num1 >= num2)  # Greater than or equal to
-print(num1 <= num2)  # Less than or equal to
+# Comparison Operators
+
+# Demonstrate equality, inequality, greater than, less than, greater than or equal to, 
+# less than or equal to
+print("Equality:", num1 == num2)
+print("Inequality:", num1 != num2)
+print("Greater than:", num1 > num2)
+print("Less than:", num1 < num2)
+print("Greater than or equal to:", num1 >= num2)
+print("Less than or equal to:", num1 <= num2)
 
 # Assignment Operators
-# As we have defined num1=10 and num2=3 so this
-num3 = 8  # simple assignment, assigns num3 variable to value 10
-num3 += 1  # adds 1 to previous value of num3
-print("After `+= 1` now num3 = ", num3)
-num3 -= 3  # subtracts 3 from previous value of num3
-print("After `-= 3` now num3 = ", num3)
-num3 *= 4  # multiplies 4 with previous value of num3
-print("After `*= 4` now num3 = ", num3)
-num3 /= 4  # divides 4 with previous value of num3
-print("After `/= 4` now num3 = ", num3)
+
+num3 = 8  # Simple assignment
+
+# Demonstrate compound assignment operators for addition, subtraction, multiplication, 
+# and division
+num3 += 1
+print("After `+= 1`:", num3)
+num3 -= 3
+print("After `-= 3`:", num3)
+num3 *= 4
+print("After `*= 4`:", num3)
+num3 /= 4
+print("After `/= 4`:", num3)
 
 # Identity Operators
-print(
-    num1 is num1
-)  # 'is' is a keyword. It checks identity of both operands and return value
-print(num2 is not num3)
+
+# Demonstrate the `is` and `is not` operators for checking object identity
+print("num1 is num1:", num1 is num1)
+print("num2 is not num3:", num2 is not num3)
 
 # Exercise Question: Find an Euclidian distance between (2, 3) and (10, 8)
 # In (2,3), 2 is coordinate value on x-axis, 3 is coordinate value on y axis. Similar in (10,8)
@@ -47,7 +65,7 @@ y1 = 3
 x2 = 10
 y2 = 8
 
-# Now find the squared distances
+# find the squared distances
 x = (x2 - x1) ** 2
 y = (y2 - y1) ** 2
 
