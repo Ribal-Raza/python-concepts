@@ -17,6 +17,14 @@
         -   [Complex (complex) Data Type](#complex-complex-data-type)
         -   [Math Module in Python](#math-module-in-python)
         -   [Built-in Functions for Numeric Values](#built-in-functions-for-numeric-values)
+- [User Input](#user-input)
+    - [Purpose](#purpose)
+    - [Input function](#input-function)
+    - [Input related functions](#other-input-related-functions)
+- [Writng Comments](#writing-comments-in-python)
+    - [Single Line Comments](#single-line-comments)
+    - [Multiline Line Comments](#multi-line-comments)
+    - [Docstrings](#professional-docstrings)
 - [Questions](#conceptualcommonly-asked-questions)
 
 ## First Program: Hello, World!
@@ -420,6 +428,98 @@ print(result)  # 5.0
     num_float = float(num_str)
     num_complex = complex(num_str)
     ```
+## User Input
+### **Purpose:**
+
+-   **Interactive applications:** User input is essential for creating interactive CLI programs where users provide data or control program flow.
+-   **Data collection:** Gather information from users during execution, making programs dynamic and responsive.
+-   **Input validation:** Ensure data integrity and prevent errors by validating user input (e.g., numerical values, valid file paths).
+-   **Conditional execution:** Control program behavior based on user input, enabling flexibility and adaptability.
+
+### **`input()` Function:**
+
+-   **Usage:** Get user input in the CLI.
+-   **Syntax:**  `input([prompt])`
+    
+    -   `prompt` (optional): String displayed before input. Defaults to `>>>`.
+    
+-   **Return value:** Entire line of text entered by the user (including spaces and newline).
+-   **Example:**
+	```python
+	name = input("What is your name? ")
+	print(f"Hello, {name}!")
+	```
+
+### **Storing User Input:**
+
+-   **Assignment:** Use `=` to store the value returned by `input()` in a variable for further use.
+-   **Example:**
+	```python
+	age = int(input("How old are you? "))
+	print(f"You are {age} years old.")
+	```
+
+### **Other Input-Related Functions:**
+
+-   `eval()`: Evaluates a string expression as Python code (use with caution due to security risks).
+-   `exec()`: Executes a block of Python code passed as a string (exercise exceptional caution).
+-   `getpass()`: Gets a password without echoing to the screen.
+-   `sys.argv`: Access command-line arguments passed to the script.
+
+**Key Points:**
+
+-   Use clear and concise prompts to guide the user.
+-   Validate input to prevent errors and security vulnerabilities.
+-   Consider advanced input validation libraries or techniques for complex scenarios.
+
+
+## Writing Comments in Python
+### **Single-Line Comments:**
+
+-   Start with the `#` symbol.
+-   Everything on the same line after the `#` is ignored by the Python interpreter.
+-   Use them for brief explanations or reminders within code:
+	```python
+	# This variable stores the user's age
+	age = input("Enter your age: ")
+	```
+### **Multi-Line Comments:**
+
+-   Use triple quotes (either `'''` or `"""`) to enclose multi-line comments.
+-   They can span multiple lines and are ideal for more detailed explanations or documentation:
+	```python
+	"""
+	This is a multi
+	line comment
+	"""
+	```
+	
+### **Professional Docstrings:**
+
+-   Docstrings are triple-quoted strings placed at the beginning of functions, classes, modules, or methods.
+-   They provide essential information for developers using your code.
+There are following keywords used in docstrings to explain code.
+1.  **Arguments:** List each argument with its name, type (e.g.,  `int`,  `float`,  `str`), and a brief description.  
+2.  **Return Value:** Describe the data type and meaning of the function's return value.
+3.  **Raises:** List any exceptions the function might raise, including their types and conditions.
+4.  **Attributes (Classes):** Describe the instance attributes of a class, their types, and purposes.
+5.  **Examples:** Include code snippets demonstrating how to use the function or class with typical inputs and outputs.
+**Example Doc String:**
+	```python
+	""" Calculates the area of a rectangle.
+	 Args: 
+		 length (float): The length of the rectangle. width (float): The width of the rectangle.
+		  
+	Returns: 
+		float: The area of the rectangle. Raises: ValueError: If either length or width is negative. 
+		
+	Examples: 
+		>>> calculate_area(5, 3) 15.0 
+		>>> calculate_area(-2, 4)
+		Traceback (most recent call last): ... 
+		
+	ValueError: Length and width must be non-negative. """
+	```
 
 ## Conceptual/Commonly Asked Questions:
 
