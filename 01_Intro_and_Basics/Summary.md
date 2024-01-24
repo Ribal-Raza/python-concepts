@@ -4,6 +4,7 @@
 
 -   [First Program: Hello, World!](#first-program-hello-world)
 -   [Data Types and Variables](#data-types-and-variables)
+    - [Mutable and Unmutable Data Types](#mutable-vs-unmutable-data-types)
 -   [Operators](#operators)
 -   [Indentation](#indentation)
 -   [Data Types in Detail](#data-types-in-detail)
@@ -106,7 +107,10 @@ pythonCopy code
     value = 42
     print(value.__class__.__name__)  # 'int'
     ``` 
-    
+#### **Mutable vs. Unmutable Data Types**
+
+-   **Mutable:** Can be modified after creation (lists, dictionaries, sets).
+-   **Unmutable:** Cannot be changed after creation (strings, tuples, numbers).
 
 ### 2. Variables in Programming
 
