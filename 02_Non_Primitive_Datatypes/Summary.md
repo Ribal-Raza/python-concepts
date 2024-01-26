@@ -17,7 +17,12 @@
         - [Nested Dictionaries](#nested-dictionaries)
         - [Acessing Dictionary items](#accessing-dictionary-items)
         - [Questions](#questions-related-to-dictionaries)
-
+    - [Sets](#sets)
+        - [Initializing sets and nested sets](#initializing-sets-and-nested-sets)
+        - [Copying Sets](#copying-sets-deep-vs-shallow-copy)
+        - [Sets Functions/Methods](#sets-built-in-methodsfunctions)
+        - [Sets Ordering and Duplicate Removal](#ordering-and-duplicate-removal)
+        - [Questions](#questions-related-to-sets)
 
 # Non-primitive data types
 Unlike primitive data types, which store single values (e.g., integers, strings, booleans), non-primitive can hold collections of values, to offer greater flexibility and organization for complex data scenarios.
@@ -330,3 +335,80 @@ Dictionaries are iterable, meaning you can loop through their elements using `fo
 
 5.  **How do you check if a specific key exists in a dictionary?**
 **Answer:** The `in` operator provides a straightforward way to check key presence. You can also use the `get(key, default)` method with a default value to avoid `KeyError` exceptions for non-existent keys.
+
+## Sets
+-   Sets are unordered collections of unique elements. They store items of various data types and ensure no duplicates exist.
+-   They are mutable, meaning you can modify their contents after creation.
+-   Unlike lists or dictionaries, sets don't preserve insertion order and don't use keys for access.
+
+### Initializing Sets and Nested Sets
+
+1.   **Curly Braces:**
+	```python
+	my_set = {1, 2, 3, "apple"}  # Creates a set with four elements
+	```     
+2.  **`set()`  Constructor:**
+    ```python
+    empty_set = set()  # Creates an empty set
+    new_set = set("abc")  # Creates a set from a string (unique characters)
+    ```    
+3. **Nested Sets:**
+    ```python
+    outer_set = {"a", "b", {"x", "y"}}  # Contains one set element and a nested set  
+    ```
+
+### **Copying Sets: Deep vs. Shallow Copy:**
+
+-   **Shallow Copy:** Creates a new set that references the same objects as the original. Changes in one set affect the other.
+    
+    -   Using `set(original_set)` or assignment (`new_set = original_set`).
+    
+-   **Deep Copy:** Creates a new set with independent copies of the original elements (if they are mutable).
+    
+    -   Using `copy.deepcopy(original_set)` from the `copy` module.
+    
+
+### **Sets Built-in Methods/Functions**
+
+1.  **`len(set)`:** Returns the number of elements in the set.
+2.  **`in`:** Checks if an element exists in the set.
+3.  **`add(element)`:** Adds an element to the set if it's unique.
+4.  **`update(iterable)`:** Adds all unique elements from the iterable to the set.
+5.  **`remove(element)`:** Removes an element from the set, raises an error if not found.
+6.  **`discard(element)`:** Removes an element from the set if it exists, silently ignores if not found.
+7.  **`pop()`:** Removes and returns an arbitrary element from the set.
+8.  **`intersection(other_set)`:** Returns a new set with elements present in both sets.
+9.  **`union(other_set)`:** Returns a new set with all unique elements from both sets.
+10.  **`difference(other_set)`:** Returns a new set with elements in the first set but not in the second.
+
+**Accessing Values in Sets:**
+
+Since sets are unordered, you cannot access elements by index or key-value pairs. Iteration remains the primary way to process elements.
+
+### **Ordering and Duplicate Removal:**
+
+-   While insertion order isn't guaranteed, sets maintain a specific order based on the elements' hash values. This order may change across Python versions or different machines.
+-   Duplicate removal occurs during set creation or addition due to the internal hashing mechanism.
+-   For `0`,  `False`, and `1`, you might see `0` and `False` treated as the same since Python compares their identity (memory location), not their truthiness.
+
+### **Questions related to Sets**
+
+1.  **Why use sets over lists?**
+    
+    -   Answer: Sets excel at checking membership efficiently, removing duplicates, and performing set operations (union, intersection, difference). For ordered collections without duplicates, lists are preferred.
+    
+2.  **What types of data can sets store?**
+    
+    -   Answer: Sets can store elements of any data type as long as they are immutable (e.g., strings, numbers, tuples). Mutable objects like lists or dictionaries require careful handling to avoid unintended behavior.
+    
+3.  **How to ensure consistent element order in sets?**
+    
+    -   Answer: Sets inherently lack a fixed order. If order is crucial, consider converting the set to a list and explicitly sorting it.
+    
+4.  **How to create a frozen set (immutable set)?**
+    
+    -   Answer: Use the `frozenset()` constructor. Frozen sets cannot be modified but are generally faster for lookups.
+    
+5.  **How to efficiently iterate through set elements and their corresponding indices?**
+    
+    -   Answer: Since indices don't exist in sets, iterate through the set directly using a `for` loop. Indexing attempts will raise an error.

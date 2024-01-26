@@ -1,84 +1,138 @@
-# Dictionaries holds data/items in key-value pairs, value can be of any data type
+"""
+Demonstrates working with dictionaries in Python, including:
+- Creation
+- Accessing items
+- Membership checking
+- Modifying values
+- Removing items
+- Clearing and deleting dictionaries
+- Copying dictionaries
+- Nested dictionaries
+"""
 
-# Different ways to create dictionaries
+# =============================================================================
+# Creating Dictionaries
+# =============================================================================
+
+# Create a dictionary using curly braces:
 user = {
     "name": "Raza",
     "age": 24,
 }
 
+# Create a dictionary using the dict() constructor:
 user2 = dict(name="Ahmar", age=26)
 
+# Print both dictionaries to observe their structure:
 print(user)
 print(user2)
-print(type(user))
-print(len(user))
 
-# Access items
-print(user["name"])
-print(user.get("age"))
+# =============================================================================
+# Accessing Items
+# =============================================================================
 
-# list all keys, values
-print(user.keys())
-print(user.values())
+# Access a value by key:
+print(user["name"])  # Output: Raza
 
-# items (key-value pairs) as tuples
-print(user.items())
+# Use get() for safer access with a default value:
+print(user.get("age"))  # Output: 24
 
-# membership checking
-print("age" in user)
-print("loginstatus" in user)
+# =============================================================================
+# Listing Keys, Values, and Items
+# =============================================================================
 
-# change/add values in dicts
+# Get a view of all keys:
+print(user.keys())  # Output: dict_keys(['name', 'age'])
+
+# Get a view of all values:
+print(user.values())  # Output: dict_values(['Raza', 24])
+
+# Get a view of key-value pairs as tuples:
+print(user.items())  # Output: dict_items([('name', 'Raza'), ('age', 24)])
+
+# =============================================================================
+# Membership Checking
+# =============================================================================
+
+# Check if a key exists in the dictionary:
+print("age" in user)  # Output: True
+print("loginstatus" in user)  # Output: False
+
+# =============================================================================
+# Modifying and Adding Values
+# =============================================================================
+
+# Change an existing value:
 user["name"] = "Korg"
-print(user)
+print(user)  # Output: {'name': 'Korg', 'age': 24}
 
+# Add a new key-value pair:
 user.update({"loginstatus": True})
-print(user)
+print(user)  # Output: {'name': 'Korg', 'age': 24, 'loginstatus': True}
 
-# remove items
-print(user.pop("loginstatus"))
-print(user)
+# =============================================================================
+# Removing Items
+# =============================================================================
 
+# Remove a key-value pair and return its value:
+print(user.pop("loginstatus"))  # Output: True
+print(user)  # Output: {'name': 'Korg', 'age': 24}
+
+# Add another key-value pair:
 user["isadult"] = True
-print(user)
+print(user)  # Output: {'name': 'Korg', 'age': 24, 'isadult': True}
 
-print(user.popitem())  # pop item removes last item and returns it in tuple form
-print(user)
+# Remove and return a random key-value pair:
+print(user.popitem())  # Output: (random key-value pair)
+print(user)  # Output: {'name': 'Korg', 'age': 24} (removed one pair)
 
-# clear and delete
-user["isadult"] = True
-print(user)
+# =============================================================================
+# Clearing and Deleting Dictionaries
+# =============================================================================
 
-del user["isadult"]
-print(user)
+# Remove all key-value pairs:
+user.clear()
+print(user)  # Output: {}
 
-user2.clear()
-print(user2)
+# Delete the entire dictionary object:
+del user2
 
-del user2  # deletes whole dict
+# =============================================================================
+# Copying Dictionaries
+# =============================================================================
 
-# copy dict
-user2 = user  # user2 has reference to user, change in user2 will cause change in user
-user2["name"] = "Raza"
-print(user2)
-print(user)
+# Shallow copy (references same objects):
+user2 = user  # Both refer to the same dictionary
+user2["name"] = "Raza"  # Change in user2 reflects in user
+print(user)  # Output: {'name': 'Raza', 'age': 24}
 
-user3 = user.copy() 
-print(user2)
+# Create a new, independent copy:
+user3 = user.copy()  # Creates a shallow copy
+user4 = dict(user)  # Another way to create a shallow copy
 
-user4 = dict(user)
-print(user4)
+# =============================================================================
+# Nested Dictionaries
+# =============================================================================
 
-# nested dicts
+# Create nested dictionaries:
 visitor1 = {"name": "1visit", "age": 23}
-print(visitor1)
-
-visitor2 = dict(visitor1)
+visitor2 = dict(visitor1)  # Create a shallow copy
 visitor2["name"] = "2visit"
-print(visitor2)
 
+# Create
 visitors = {"visitor1": visitor1, "visitor2": visitor2}
 
-print(visitors)
+# Access nested values using nested keys
+print(visitors["visitor1"]["name"])  # Output: 1visit
 
-print(visitors["visitor1"]["name"])
+# =============================================================================
+# Summary
+# =============================================================================
+"""
+Dictionaries are versatile data structures in Python for storing and managing key-value pairs. They offer efficient access, modification, and manipulation of diverse data types. Remember the following key points:
+- Keys must be immutable (e.g., strings, numbers, tuples) to ensure uniqueness.
+- Views like keys(), values(), and items() reflect changes in the original dictionary.
+- Use get() for safer value retrieval with default values.
+- Shallow copying creates references, while copy() and dict(original) methods provide independent copies.
+- Nested dictionaries allow you to model complex relationships among data.
+"""
