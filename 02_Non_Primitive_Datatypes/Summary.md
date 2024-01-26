@@ -9,6 +9,14 @@
         - [Tuple Methods/Functions](#tuple-methodsfunctions)
         - [Packing and unpacking Tuples](#packing-and-unpacking-tuples)
         - [Questions](#questions-related-to-tuples)
+    - [Dictionaries](#dictionaries)
+        - [Ways to Initialize Dictionaries](#different-ways-to-initialize-dictionaries)
+        - [Copying Dictionaries](#copy-dictionaries-deep-and-shallow)
+        - [Dictionaries Functions/Methods](#built-in-dictionary-methodsfunctions)
+        - [Packing and Unpacking Dictionaries](#packing-and-unpacking-dictionaries)
+        - [Nested Dictionaries](#nested-dictionaries)
+        - [Acessing Dictionary items](#accessing-dictionary-items)
+        - [Questions](#questions-related-to-dictionaries)
 
 
 # Non-primitive data types
@@ -203,3 +211,122 @@ My apologies, I wasn't able to complete the previous response due to some techni
     
 -   **Performance:**
     -   Generally,  `tuple` comprehension might be slightly faster due to immutability, but the difference is often negligible in most practical scenarios.
+
+## Dictionaries
+Dictionaries are mutable, unordered collections of key-value pairs enclosed in curly braces `{}`. They allow you to store diverse data types associated with unique keys, offering flexibility for representing complex relationships. Dictionaries fall under the **mutable** category, meaning you can add, remove, or modify key-value pairs after creating the dictionary
+**Purpose:**
+- Organize and represent data with meaningful associations between keys and values.
+- Implement data structures like hash tables for efficient lookups and access.
+- Model real-world entities with attributes and properties (e.g., user profiles, inventory items).
+    
+
+### **Different Ways to Initialize Dictionaries**
+
+1.  **Empty Dictionary:**
+    ```python
+    empty_dict = {}
+    ```
+2.  **Dictionary with Items:**
+    ```python
+    student_info = {"name": "Alice", "age": 25, "major": "Computer Science"}
+    ```
+3.  **Using  `dict()`  Constructor:**
+    ```python
+    new_dict = dict(name="Bob", age=30, skills=["Python", "Java"])
+    
+    ```
+
+### Copy Dictionaries (Deep and Shallow)    
+
+1. **Shallow Copy**
+	-   Using the `copy()` method or `dict(original_dict)` constructor creates a shallow copy.
+	-   Modifying a value in either dictionary will affect the other:
+	```python
+	original_dict = {"name": "Alice", "age": 30} 
+	shallow_copy = original_dict.copy() 
+	original_dict["age"] = 35  # Modify value in original dictionary 
+	print(shallow_copy["age"]) # Output: 35 (value changed due to shallow copy)
+	``` 
+2. **Deep Copy**
+	-   Using the `copy.deepcopy()` function from the `copy` module creates a deep copy.
+	-   Modifications in one dictionary won't affect the other:
+	```python
+	original_dict = {"name": "Bob", "address": {"city": "New York"}} 
+	deep_copy = copy.deepcopy(original_dict)
+	```
+	
+### Built-in Dictionary Methods/Functions
+
+1.  **`len(dict)`:** Returns the number of key-value pairs in the dictionary.
+2.  **`dict.keys()`:** Returns a view of all dictionary keys.
+3.  **`dict.values()`:** Returns a view of all dictionary values.
+4.  **`dict.items()`:** Returns a view of all key-value pairs as tuples.
+5.  **`in`:** Checks if a key exists in the dictionary.
+6.  **`dict.get(key, default)`:** Returns the value for a key, or a default value if not found.
+7.  **`dict.setdefault(key, default)`:** Returns the value for a key, or sets it to the default value if not found.
+8.  **`dict.update(other)`:** Updates the dictionary with key-value pairs from another dictionary.
+9.  **`dict.pop(key, default)`:** Removes and returns the value for a key, or a default value if not found.
+10.  **`dict.clear()`:** Removes all key-value pairs from the dictionary.
+
+### Packing and Unpacking Dictionaries
+
+-   **Packing:** Creating a dictionary from existing variables:
+    ```python
+    first_name = "Alice"
+    last_name = "Smith"
+    address = "123 Main St"
+    person = {"first_name": first_name, "last_name": last_name, "address": address}  
+    ```
+    
+-   **Unpacking:** Assigning dictionary values to variables:
+    ```python
+    person = {"name": "Bob", "age": 30, "city": "New York"}
+    name, age, city = person["name"], person["age"], person["city"]
+    
+    ```
+
+### Nested Dictionaries
+
+-   Store complex data structures with hierarchical relationships:
+    ```python
+    employees = {
+        "Alice": {"department": "Engineering", "salary": 80000},
+        "Bob": {"department": "Marketing", "salary": 75000},
+    } 
+    ```
+-   Access nested values using nested keys:
+    ```python
+    alice_salary = employees["Alice"]["salary"]
+    ```
+### Accessing Dictionary Items
+1.  **By Key:**
+This is the most straightforward method, where you directly use the key enclosed in square brackets (`[]`) to retrieve the corresponding value. If the key doesn't exist, a `KeyError` is raised.
+	```python
+	person = {"name": "Alice", "age": 30, "city": "New York"}
+	name = person["name"]  # Accessing the value associated with the "name" key
+	print(name)  # Output: Alice
+	```
+2. **`get()` Method:**
+This method provides a safer approach by allowing you to specify a default value to return if the key is not found. It avoids `KeyError` exceptions, making your code more robust.
+	```python
+	occupation = person.get("occupation", "N/A")  # Gets the "occupation" value or "N/A" if not found
+	print(occupation)  # Output: N/A
+	```
+3. **Looping:**
+Dictionaries are iterable, meaning you can loop through their elements using `for` loops. You can loop through keys, values, or key-value pairs depending on your needs.
+
+### Questions related to Dictionaries
+1.  **How do dictionaries ensure uniqueness of keys?**
+**Answer:** Dictionaries rely on hash values calculated from keys for efficient lookups. Since hash values depend on the key's content,  **only immutable data types (strings, numbers, tuples) can be used as keys to guarantee unique and consistent hashing.** Using mutable data types as keys could lead to unpredictable behavior due to changing hash values.
+
+2.  **What are the differences between shallow and deep copying dictionaries?**
+**Answer:**  **Shallow copying** creates a new dictionary that references the same objects as the original for its values. Changes made in one dictionary reflect in the other.  **Deep copying** creates a completely independent copy where both keys and values are copied, and modifications are isolated. For nested dictionaries, deep copying is essential to avoid unintended changes.
+
+3.  **How do you iterate through key-value pairs in a dictionary?**
+**Answer:** Use the `for key, value in dictionary.items():` loop to iterate through both keys and values simultaneously. Alternatively, loop through `keys()` or `values()` separately if needed.
+
+4.  **What are some common use cases for dictionaries in Python?**
+**Answer:** Dictionaries are versatile for representing real-world entities with attributes (e.g., user profiles, inventory items), implementing hash tables for efficient lookups, storing configuration data, and modeling complex relationships between data elements.
+
+5.  **How do you check if a specific key exists in a dictionary?**
+**Answer:** The `in` operator provides a straightforward way to check key presence. You can also use the `get(key, default)` method with a default value to avoid `KeyError` exceptions for non-existent keys.
