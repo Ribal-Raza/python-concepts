@@ -18,6 +18,9 @@
     extensions = [
       # "vscodevim.vim"
       "google.gemini-cli-vscode-ide-companion"
+      "ms-python.black-formatter"
+      "ms-python.debugpy"
+      "ms-python.python"
     ];
     # Enable previews
     previews = {
